@@ -1,0 +1,64 @@
+$color: Azul;
+p{
+  @if($color==Azul)  {
+    color: blue;
+
+  } @else {
+    color: white;
+  }
+    
+  }
+
+@for $i from 1 to 6{
+  h#{$i} {
+    font-size: $i * 10px;
+
+  }
+}
+
+@each $div in purple, blue, red, orange {
+  .#{$div}{
+    background-color: #{$div} ;
+    background-size: 400px;
+    $color: blanca;
+    p{
+      @if($color==Azul)  {
+        color: blue;
+    
+      } @else {
+        color: white;
+      }
+        
+      }
+  }
+
+.prueba{
+  padding: 100px;
+  margin: 100px;
+  background-color: aqua;
+}
+
+.prueba2{
+  @extend .prueba;
+
+  border-color: brown;
+  border-width: 2px;
+
+}
+
+  }
+
+$font-size:(small: 12px, medium: 14px, big: 18px);
+
+@each $name, $size in $font-size {
+
+  .element-#{$name}{
+    font-size: $size;
+  }
+  
+}
+
+
+
+
+
